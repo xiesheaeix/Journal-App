@@ -1,0 +1,19 @@
+<%- include('./partials/header') %>
+
+<%# What logged in user sees %>
+
+<% if (user) { %>
+<div>
+    <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer"> 
+    <%= user.name %></div>
+</div>
+  
+<%# Front page before user is logged in %>
+
+<% } else { %>
+  <h1>Express Yourself...</h1>
+  <div>
+  </div>
+<% } %>
+
+<%- include('./partials/footer') %>

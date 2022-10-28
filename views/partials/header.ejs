@@ -10,8 +10,13 @@
     <nav>
         <a href="/">Home</a>
        <% if (user) { %>
+        <div class="review-user">
+            <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer"> 
+            <%= user.name %></div>
+
+        </div>
         <a href="/logout">Log Out</a>
-       <% } else {%>
+       <% } else { %>
         <a href="/auth/google" class="login">Log In</a>
        <% } %>
     </nav>

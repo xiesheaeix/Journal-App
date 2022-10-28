@@ -7,8 +7,15 @@ const postSchema = new Schema({
         type: String,
         maxLength: 1200,
         required: true
-    }, 
-    timestamps: true
+    },  
+     user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+      },
+      userName: String,
+      userAvatar: String,
+}, {
+     timestamps: true
 });
 
 module.exports = mongoose.model('Post', postSchema);

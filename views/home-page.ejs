@@ -7,6 +7,16 @@
     <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer"> 
     <%= user.name %></div>
 </div>
+
+<section class="userBio">
+  <%= user.bio %>
+</section>
+
+<form action="/home-page" method="POST">
+  <label>Enter Bio:</label>
+  <input type="text" name="bio">
+  <input type="submit" value="Submit">
+</form>
   
 <%# Front page before user is logged in %>
 

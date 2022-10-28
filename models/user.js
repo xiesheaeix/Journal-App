@@ -7,8 +7,13 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    bio: {
+        type: String,
+        maxLength: 120,
+        required: true
+    },
     email: String,
-    avatar: String
+    avatar: String,
   }, {
     timestamps: true
   });

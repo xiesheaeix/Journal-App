@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+<form id="new-post" action="/posts" method="POST">
+    <label>Title</label>
+    <input type="text" name="title"><br>
+    <input type="text" name="content"><br>
+    <input type="submit" value="ADD NEW POST">
+</form>
+
+<% posts.forEach(function(p) { %>
+    <div class="container-lg">
+        <h3><%= p.title %></h3><br>
+        <p><%= p.content %></p>
+        <div><%= p.createdAt %></div>
+        <div><%= p.userName %></div>
+    </div>
+<% }); %>
+
+<%- include('../partials/footer') %>
+

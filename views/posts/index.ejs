@@ -12,7 +12,7 @@
         <h3><%= p.title %></h3><br>
         <p><%= p.content %></p>
         <div><%= p.createdAt %></div>
-        <div><%= p.userName %></div>
+        <a href="/posts/<%=p._id %>">Details</a>
     </div>
 <% }); %>
 

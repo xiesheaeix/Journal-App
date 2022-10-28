@@ -3,7 +3,8 @@ const Post = require('../models/post');
 module.exports = {
     index,
     new: newPost,
-    create
+    create,
+    show
 };
 
 function index(req, res) {
@@ -25,4 +26,11 @@ function create(req, res) {
         if (err) return res.redirect('/posts/new');
         res.redirect('/posts');
     })
+}
+
+function show(req, res) {
+    let postId = req.params.id;
+    Post.findById(req.params.id, function(err, post) {
+        res.render('posts/show',{ post });
+    });
 }

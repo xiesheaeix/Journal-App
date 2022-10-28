@@ -14,6 +14,7 @@ const userSchema = new Schema({
     },
     email: String,
     avatar: String,
+    birthday: Number
   }, {
     timestamps: true
   });

@@ -1,10 +1,13 @@
 <%- include('../partials/header') %>
 
 <form id="new-post" action="/posts" method="POST">
-    <label>Title</label>
-    <input type="text" name="title"><br>
-    <input type="text" name="content"><br>
-    <input type="submit" value="ADD NEW POST">
+    <div class="form-group">
+        <label>Title</label>
+        <input class="form-control" type="text" name="title"><br>
+        <label>Write Your Heart Out</label>
+        <input class="form-control" type="text" name="content"><br>
+        <input class="btn btn-dark" type="submit" value="ADD NEW POST">
+    </div>
 </form>
 
 <% posts.forEach(function(p) { %>

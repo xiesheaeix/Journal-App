@@ -1,46 +1,35 @@
 <%- include('../partials/header') %>
 
-
 <section id="show-page" class="container-lg">
     <div><%= post.title %></div>
     <div><%= post.content %></div>
     <div><%= post.createdAt %></div>
 </section>
 
-<form id="add-comment" method="POST"
- action="/posts/<%= post._id %>/comments">
-<input type="text" name="comment">
-<input type="submit" value="Add Comment">
-</form>
-
-
-
+<h3>Comments</h3>
 <% if (post.comments.length) { %>
-    <table>
-      <thead>
-        <tr>
-          <th>User</th>
-          <th>Date</th>
-          <th>Review</th>
-          <th>Rating</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-
-        <% post.comments.forEach(function(p) { %>
-          <tr>
-            <td class="review-user"><img alt="avatar" src="<%= p.userAvatar %>" referrerpolicy="no-referrer"> <%= p.userName %></td>
-            <td><%= p.createdAt.toLocaleDateString() %></td>
-            <td><%= p.content %></td>
-            <td><%= p.rating %></td>
-            <td>
-        <% }); %>
-      </tbody>
-    </table>
-  <% } else { %>
-    <h5>No Reviews Yet</h5>
-  <% } %>
-
+  <% post.comments.forEach(function(p) { %>
+    <section class="container-lg">
+      <div class="comment-user"><img alt="avatar" src="<%= p.userAvatar %>" referrerpolicy="no-referrer"> 
+        <%= p.userName %></div>
+      <div class="text-end"><%= p.contents %></div>
+        
+      <% if (user?._id.equals(p.user)) { %>
+        <form action="/comments/<%= p._id %>?_method=DELETE" method="POST">
+          <button type="submit">X</button>  
+        </form>
+        <% } %>
+  </section> 
+      <% }); %>
+      <% } else { %>
+        <h5>No Reviews Yet</h5>
+        <% } %>
+            
+  
+  <form id="add-comment" method="POST"
+    action="/posts/<%= post._id %>/comments">
+    <textarea name="contents"></textarea><br>
+    <input type="submit" value="Add Comment">
+  </form>
 
 <%- include('../partials/footer') %>

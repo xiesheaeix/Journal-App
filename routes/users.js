@@ -1,10 +1,15 @@
 
 var express = require('express');
 var router = express.Router();
+var usersCtrl = require('../controllers/users');
+var ensureLoggedIn = require('../config/ensureLoggedIn');
 
-/* GET users listing. */
+
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.render('users/index');
 });
+
+
+router.get('/users', ensureLoggedIn, usersCtrl.index);
 
 module.exports = router;

@@ -1,11 +1,12 @@
 const User = require = ('../models/user');
 
 module.exports = {
-    addBio,
+   index
 };
 
-function addBio(req, res) {
-    User.findById(req.params.id, function(err, user) {
-        
+function index(req, res) {
+    User.find({}, function(err, users) {
+        res.render('users/index', { users });
     });
 }
+

@@ -13,3 +13,23 @@ a {
   margin: 30px 0px;
   padding: 15px;
 }
+
+.text-end {
+  font-size: 30px;
+}
+
+.jumbotron{
+  padding: 40vmin 15vmin;
+  background-image: url(http://i.imgur.com/QowM8NS.jpg);
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.jumbotron h1 {
+  
+  top: 10vmin;
+  font-weight: bold;
+  font-size: 10vmin;
+  padding-left: 10vminpx;
+}
+

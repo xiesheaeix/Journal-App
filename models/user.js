@@ -10,11 +10,9 @@ const userSchema = new Schema({
     bio: {
         type: String,
         maxLength: 120,
-        required: true
     },
     email: String,
     avatar: String,
-    birthday: Number
   }, {
     timestamps: true
   });

@@ -4,17 +4,19 @@
     <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer"> 
     <%= user.name %></div>
     <%= user.email %>
+
 </div>
 
 <section class="userBio">
   <%= user.bio %>
 </section>
 
-<form action="" method="POST">
+<form action="" method="POST" class="form-group">
   <label>Enter Bio:</label>
-  <input type="text" name="bio">
-  <input type="submit" value="Submit">
+  <input type="text" name="bio" class="form-control">
+  <input type="submit" value="Submit" class="btn btn-dark">
 </form>
+
 
 <%- include('../partials/footer') %>
 

@@ -4,7 +4,8 @@ module.exports = {
     index,
     new: newPost,
     create,
-    show
+    show,
+    edit
 };
 
 function index(req, res) {
@@ -25,12 +26,30 @@ function create(req, res) {
     post.save(function(err) {
         if (err) return res.redirect('/posts/new');
         res.redirect('/posts');
-    })
+    });
 }
+
 
 function show(req, res) {
     let postId = req.params.id;
     Post.findById(req.params.id, function(err, post) {
         res.render('posts/show',{ post });
+    });
+}
+
+function edit(req, res) {
+    Post.findOneAndUpdate({
+        _id:  req.params.id,
+    },
+    {
+        title: req.body.title,
+        content: req.body.content
+    }, (err, post) => {
+        if (!err) {
+            res.render('edit', {
+                title: post.title,
+                content: post.content
+            });
+        }
     });
 }

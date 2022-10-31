@@ -26,10 +26,13 @@ a {
 }
 
 .jumbotron h1 {
-  
   top: 10vmin;
   font-weight: bold;
   font-size: 10vmin;
   padding-left: 10vminpx;
 }
 
+.post-details {
+  display: inline-flex;
+  justify-content: space-evenly;
+}

@@ -3,13 +3,14 @@
 <section id="show-page" class="container-lg">
     <h1><%= post.title %></h1>
     <div><%= post.content %></div>
-    <% const dateCreated = post.createdAt %><br>
-    <div>Posted: <%= dateCreated.toLocaleDateString(); %></div><br>
-    <div class="post-user"><img alt="avatar" src="<%= post.userAvatar %>" referrerpolicy="no-referrer">
-      <%= post.userName %></div><br>
+    <div class="post-details"></div>
+      <% const dateCreated = post.createdAt %><br>
+      <div>Posted: <%= dateCreated.toLocaleDateString(); %></div><br>
+      <div class="post-user"><img alt="avatar" src="<%= post.userAvatar %>" referrerpolicy="no-referrer">
+        <%= post.userName %></div><br>
+      </div>
 
-    
-    <% if (user) { %>
+    <% if (user?._id.equals(post.user)) { %>
       <h4>Edit Post</h4>
       <form action="posts/<%= post._id %>/edit" method="PUT">
         <div class="form-group">

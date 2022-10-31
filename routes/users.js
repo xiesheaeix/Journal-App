@@ -7,6 +7,7 @@ var ensureLoggedIn = require('../config/ensureLoggedIn');
 
 
 router.get('/', ensureLoggedIn, usersCtrl.index);
+router.get('/:id', usersCtrl.show);
 
 
 module.exports = router;

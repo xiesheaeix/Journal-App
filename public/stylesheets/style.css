@@ -5,6 +5,11 @@ body {
 
 a {
   color: #00B7FF;
+  font-size: 20px;
+}
+
+.navbar-header {
+  margin: 20px;
 }
 
 .container-lg {
@@ -30,9 +35,4 @@ a {
   font-weight: bold;
   font-size: 10vmin;
   padding-left: 10vminpx;
-}
-
-.post-details {
-  display: inline-flex;
-  justify-content: space-evenly;
 }

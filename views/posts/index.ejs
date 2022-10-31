@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<form id="new-post" action="/posts" method="POST">
+<form id="new-post" class="mt-4" action="/posts" method="POST">
     <div class="form-group">
         <label>Title</label>
         <input class="form-control" type="text" name="title"><br>
@@ -14,9 +14,11 @@
     <div class="container-lg">
         <h3><%= p.title %></h3><br>
         <p><%= p.content %></p>
-        <% const dateCreated = p.createdAt %>
-        <div>Posted: <%= dateCreated.toLocaleDateString(); %></div><br>
-        <a href="/posts/<%=p._id %>">Details</a>
+        <div class="d-flex justify-content-between">
+            <% const dateCreated = p.createdAt %>
+            <div>Posted: <%= dateCreated.toLocaleDateString(); %></div><br>
+            <a href="/posts/<%=p._id %>">Details</a>
+        </div>  
     </div>
 <% }); %>
 

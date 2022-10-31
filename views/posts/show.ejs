@@ -1,17 +1,21 @@
 <%- include('../partials/header') %>
 
-<section id="show-page" class="container-lg">
+<section id="show-page" class="container-lg" class="mt-3">
     <h1><%= post.title %></h1>
-    <div><%= post.content %></div>
-    <div class="post-details"></div>
-      <% const dateCreated = post.createdAt %><br>
-      <div>Posted: <%= dateCreated.toLocaleDateString(); %></div><br>
-      <div class="post-user"><img alt="avatar" src="<%= post.userAvatar %>" referrerpolicy="no-referrer">
-        <%= post.userName %></div><br>
+    <h5><%= post.content %></h5><br>
+    <div class="d-flex justify-content-between">
+      <div>
+        <img alt="avatar" src="<%= post.userAvatar %>" referrerpolicy="no-referrer">
+        <a href="/users/<%= post.user %>">
+          <%= post.userName %>
+        </a>
       </div>
+        <% const dateCreated = post.createdAt %>
+        <div>Posted: <%= dateCreated.toLocaleDateString(); %></div>
+    </div>
 
     <% if (user?._id.equals(post.user)) { %>
-      <h4>Edit Post</h4>
+      <h4 class="text-center">Edit Post</h4>
       <form action="posts/<%= post._id %>/edit" method="PUT">
         <div class="form-group">
           <label>Title</label>

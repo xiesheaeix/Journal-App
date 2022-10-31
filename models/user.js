@@ -13,12 +13,8 @@ const userSchema = new Schema({
     },
     email: String,
     avatar: String,
-    posts: [{
-      type: Schema.Types.ObjectId, 
-      ref: 'Post'
-    }],
   }, {
-    timestamps: true
+    timestamps: true, 
   });
 
 module.exports = mongoose.model('User', userSchema);

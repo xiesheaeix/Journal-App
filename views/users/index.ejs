@@ -4,8 +4,16 @@
     <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer"> 
     <%= user.name %></div>
     <% const accountCreated = user.createdAt %>
-    <div>Account Created: <%= accountCreated.toLocaleDateString(); %></div>
-    <div><%= user.posts %></div>
+    <div>Account Created: <%= accountCreated%></div>
+    <% if (posts.length) { %>
+      <% posts.forEach(function(p) { %>
+        <section id="show-page" class="container-lg">
+          <h1><%= p.title %></h1>
+          <div><%= p.content %></div>
+          <div><%= p.createdAt %></div><br>
+        </section>
+      <% }); %>
+   <% } %>
     
 </div>
 

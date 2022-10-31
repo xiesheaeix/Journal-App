@@ -6,11 +6,7 @@ var ensureLoggedIn = require('../config/ensureLoggedIn');
 
 
 
-router.get('/', function(req, res, next) {
-  res.render('users/index');
-});
-
-router.get('/users', ensureLoggedIn, usersCtrl.index);
+router.get('/', ensureLoggedIn, usersCtrl.index);
 
 
 module.exports = router;

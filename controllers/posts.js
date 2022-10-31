@@ -30,7 +30,6 @@ function create(req, res) {
 }
 
 function show(req, res) {
-    let postId = req.params.id;
     Post.findById(req.params.id, function(err, post) {
         res.render('posts/show',{ post });
     });

@@ -3,20 +3,21 @@
 <div>
     <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer"> 
     <%= user.name %></div>
-    <%= user.email %>
-
+    <% const accountCreated = user.createdAt %>
+    <div>Account Created: <%= accountCreated.toLocaleDateString(); %></div>
+    <div><%= user.posts %></div>
+    
 </div>
 
 <section class="userBio">
   <%= user.bio %>
 </section>
 
-<form action="" method="POST" class="form-group">
+<form id="add-bio" action="users/<%= user._id %>" method="POST" class="form-group">
   <label>Enter Bio:</label>
   <input type="text" name="bio" class="form-control">
   <input type="submit" value="Submit" class="btn btn-dark">
 </form>
-
 
 <%- include('../partials/footer') %>
 

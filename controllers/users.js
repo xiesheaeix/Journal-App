@@ -6,6 +6,7 @@ module.exports = {
    show
 };
 
+
 function index(req, res) {
     User.find({}, function(err, users) {
         res.render('users/index', { users });

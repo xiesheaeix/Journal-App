@@ -14,7 +14,8 @@
     <div class="container-lg">
         <h3><%= p.title %></h3><br>
         <p><%= p.content %></p>
-        <div><%= p.createdAt %></div>
+        <% const dateCreated = p.createdAt %>
+        <div>Posted: <%= dateCreated.toLocaleDateString(); %></div><br>
         <a href="/posts/<%=p._id %>">Details</a>
     </div>
 <% }); %>

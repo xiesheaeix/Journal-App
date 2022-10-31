@@ -21,6 +21,12 @@ const postSchema = new Schema({
         maxLength: 1200,
         required: true
     },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+      },
+      userName: String,
+      userAvatar: String,
     comments: [commentSchema],  
 }, {
     timestamps: true

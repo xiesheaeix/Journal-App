@@ -4,6 +4,18 @@
     <div><%= post.title %></div>
     <div><%= post.content %></div>
     <div><%= post.createdAt %></div>
+    <% if (user?._id.equals(post.user)) { %>
+      <h1>Compose</h1>
+      <form action="posts/<%= post._id %>/edit" method="PUT">
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" name="title" class="form-control" >
+          <label>Post</label>
+          <textarea name="contents" class="form-control" autocomplete="off" rows="8"><%= post.content %></textarea>
+        </div>
+        <button type="submit" name="button" class="btn btn-primary">Publish</button>
+      </form>
+    <% } %>
 </section>
 
 <h3>Comments</h3>
@@ -12,20 +24,18 @@
     <section class="container-lg">
       <div class="comment-user"><img alt="avatar" src="<%= p.userAvatar %>" referrerpolicy="no-referrer"> 
         <%= p.userName %></div>
-      <div class="text-end"><%= p.contents %></div>
-        
-      <% if (user?._id.equals(p.user)) { %>
-        <form action="/comments/<%= p._id %>?_method=DELETE" method="POST">
-          <button type="submit">X</button>  
-        </form>
-        <% } %>
+      <div class="text-end"><%= p.contents %></div> 
+  <% if (user?._id.equals(p.user)) { %>
+    <form action="/comments/<%= p._id %>?_method=DELETE" method="POST">
+      <button type="submit">X</button>  
+    </form>
+    <% } %>
   </section> 
       <% }); %>
       <% } else { %>
         <h5>No Reviews Yet</h5>
         <% } %>
-            
-  
+
   <form id="add-comment" method="POST"
     action="/posts/<%= post._id %>/comments">
     <textarea name="contents"></textarea><br>

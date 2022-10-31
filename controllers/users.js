@@ -22,9 +22,11 @@ function show(req, res) {
                 console.log(posts);
                 console.log(post);
                 res.render('users/index', {
+                    user,
                     post
             });
-        });
+        }
+        );
     });
 }
 

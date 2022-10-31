@@ -1,21 +1,12 @@
 <%- include('../partials/header') %>
 
-<div id="user-info" class="mt-4" class="d-flex justify-content-between">
+<div id="user-info" class="mt-4">
     <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer"> 
     <%= user.name %></div>
     <% const accountCreated = user.createdAt %>
     <div>Account Created: <%= accountCreated.toLocaleDateString(); %></div>
-
-    <section class="userBio">
       <%= user.bio %>
-      <%= user.googleId %>
-    </section>
 
-  <form id="add-bio" action="users/<%= user._id %>" method="POST" class="form-group">
-    <label>Enter Bio:</label>
-    <input type="text" name="bio" class="form-control">
-    <input type="submit" value="Submit" class="btn btn-dark">
-  </form>
 </div>
 
     <% if (posts.length) { %>

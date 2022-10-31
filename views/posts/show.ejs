@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<section id="show-page" class="container-lg" class="mt-3">
+<section id="show-page" class="container-lg">
     <h1><%= post.title %></h1>
     <h5><%= post.content %></h5><br>
     <div class="d-flex justify-content-between">
@@ -25,7 +25,12 @@
         </div>
         <button type="submit" name="button" class="btn btn-primary">Publish</button>
       </form>
-    <% } %>
+    
+      <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+        DELETE POST
+        <button type="submit">X</button>  
+      </form>
+      <% } %>
 </section>
 
 <h3>Comments</h3>
@@ -33,10 +38,14 @@
   <% post.comments.forEach(function(p) { %>
     <section class="container-lg">
       <div class="comment-user"><img alt="avatar" src="<%= p.userAvatar %>" referrerpolicy="no-referrer"> 
-        <%= p.userName %></div>
+        <a href="/users/<%= p.user %>">
+          <%= p.userName %>
+        </a>
+        </div>
       <div class="text-end"><%= p.contents %></div> 
   <% if (user?._id.equals(p.user)) { %>
     <form action="/comments/<%= p._id %>?_method=DELETE" method="POST">
+      DELETE COMMENT
       <button type="submit">X</button>  
     </form>
     <% } %>

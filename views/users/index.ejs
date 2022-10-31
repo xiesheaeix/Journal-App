@@ -4,14 +4,10 @@
     <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer"> 
     <%= user.name %></div>
     <% const accountCreated = user.createdAt %>
-    <div>Account Created: <%= accountCreated.toLocaleDateString(); %></div>
-
-    <section class="userBio">
+    <div class="text-right">Account Created: <%= accountCreated.toLocaleDateString(); %></div>
       <%= user.bio %>
-      <%= user.googleId %>
-    </section>
 
-  <form id="add-bio" action="users/<%= user._id %>" method="POST" class="form-group">
+  <form class="mt-4" id="add-bio" action="users" method="POST" class="form-group">
     <label>Enter Bio:</label>
     <input type="text" name="bio" class="form-control">
     <input type="submit" value="Submit" class="btn btn-dark">
@@ -31,7 +27,7 @@
         </section>
       <% }); %>
    <% } else { %>
-    <h4>No Posts Yet 😢</h4>
+    <h4 class="mt-4">No Posts Yet 😢</h4>
   <% } %>
     
 

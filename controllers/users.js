@@ -3,7 +3,7 @@ const Post = require ('../models/post');
 
 module.exports = {
    index,
-   show
+   show,
 };
 
 function index(req, res) {

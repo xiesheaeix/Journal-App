@@ -5,7 +5,8 @@ module.exports = {
     new: newPost,
     create,
     show,
-    edit
+    edit,
+    delete: deletePost
 };
 
 function index(req, res) {
@@ -34,6 +35,24 @@ function show(req, res) {
         res.render('posts/show',{ post });
     });
 }
+
+function deletePost(req, res) {
+    Post.findOneAndDelete({
+        _id:  req.params.id,
+    },
+    {
+        title: req.body.title,
+        content: req.body.content
+    }, (err, post) => {
+        if (!err) {
+            res.render('delete', {
+                title: post.title,
+                content: post.content
+            });
+        }
+    });
+}
+ 
 
 function edit(req, res) {
     Post.findOneAndUpdate({

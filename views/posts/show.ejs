@@ -21,16 +21,18 @@
           <label>Title</label>
           <input type="text" name="title" class="form-control" >
           <label>Post</label>
-          <textarea name="content" class="form-control" autocomplete="off" rows="3"><%= post.content %></textarea>
+          <textarea name="content" class="form-control" autocomplete="off" rows="3"><%= post.content %></textarea><br>
         </div>
-        <button type="submit" name="button" class="btn btn-primary">Publish</button>
-      </form>
-    
-      <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
-        DELETE POST
-        <button type="submit">X</button>  
-      </form>
-      <% } %>
+          <div class="d-flex justify-content-between">
+            <button type="submit" name="button" class="btn btn-dark">Publish</button>
+          </form>
+        
+          <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+            DELETE POST
+            <button class="btn btn-dark" type="submit">X</button>  
+          </form>
+          <% } %>
+        </div>
 </section>
 <h3>Comments</h3>
 <% if (post.comments.length) { %>
@@ -45,7 +47,7 @@
   <% if (user?._id.equals(p.user)) { %>
     <form action="/comments/<%= p._id %>?_method=DELETE" method="POST">
       DELETE COMMENT
-      <button type="submit">X</button>  
+      <button class="btn btn-dark" type="submit">X</button>  
     </form>
     <% } %>
   </section> 
@@ -56,6 +58,6 @@
   <form id="add-comment" method="POST"
     action="/posts/<%= post._id %>/comments">
     <textarea name="contents"></textarea><br>
-    <input type="submit" value="Add Comment">
+    <input class="btn btn-dark" type="submit" value="Add Comment">
   </form>
 <%- include('../partials/footer') %>

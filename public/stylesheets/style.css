@@ -22,8 +22,17 @@ a {
 }
 
 .container-lg:hover {
-  background-color: black;
+  background-color: #202121;
   color: white;
+  transition: background-color 0.3s ease-out 100ms;
+}
+
+.btn:hover {
+  background-color: #00B7FF;
+  border: 2px solid #00B7FF;
+  transition: background-color 0.2s ease-out 100ms;
+  transition: border 0.2s ease-out 100ms;
+
 }
 
 .text-end {
@@ -41,7 +50,7 @@ a {
   top: 10vmin;
   font-weight: bold;
   font-size: 10vmin;
-  padding-left: 10vminpx;
+  padding-left: 10vmin;
 }
 
 .typewriter h1 {
@@ -52,7 +61,7 @@ a {
   margin: 0 auto; 
   letter-spacing: .10em; 
   animation: 
-    typing 2s steps(40, end),
+    typing 1.5s steps(40, end),
     blink-caret .75s step-end 8;
 }
 
@@ -66,4 +75,66 @@ a {
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: #00B7FF }
+}
+input[type=checkbox] {
+  position: relative;
+  cursor: pointer;
+  width: 0px;
+  height: 0px;
+}
+
+input[type=checkbox]:checked:before {
+      content: "";
+  display: block;
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border: 4px solid #00B7FF;
+  border-radius: 20px;
+  background-color: #445768;  
+  transition: all 0.2s linear;
+}
+
+
+input[type=checkbox]:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border: 4px solid #00B7FF;
+  border-radius: 3px;
+  background-color: #445768;
+}
+
+
+input[type=checkbox]:after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 0px;
+  border: solid #00B7FF;
+  border-width: 0 0px 0px 0;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  position: absolute;
+  top: 0px;
+  left: 50px;
+  transition: all 0.2s linear;
+}
+
+input[type=checkbox]:checked:after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 21px;
+  border: solid #00B7FF;
+  border-width: 0 5px 5px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 2px;
+  left: 14px;
 }

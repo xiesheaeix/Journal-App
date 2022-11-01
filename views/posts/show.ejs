@@ -32,7 +32,6 @@
       </form>
       <% } %>
 </section>
-
 <h3>Comments</h3>
 <% if (post.comments.length) { %>
   <% post.comments.forEach(function(p) { %>
@@ -54,11 +53,9 @@
       <% } else { %>
         <h5>No Reviews Yet</h5>
         <% } %>
-
   <form id="add-comment" method="POST"
     action="/posts/<%= post._id %>/comments">
     <textarea name="contents"></textarea><br>
     <input type="submit" value="Add Comment">
   </form>
-
 <%- include('../partials/footer') %>

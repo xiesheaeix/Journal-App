@@ -1,12 +1,11 @@
 <%- include('../partials/header') %>
 
 <div id="user-info" class="mt-4">
-    <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer"> 
-    <%= user.name %></div>
+    <img alt="avatar" src="<%= displayUser.avatar %>" referrerpolicy="no-referrer"> 
+    <%= displayUser.name %></div>
     <% const accountCreated = user.createdAt %>
     <div>Account Created: <%= accountCreated.toLocaleDateString(); %></div>
-      <%= user.bio %>
-
+      <%= displayUser.bio %>
 </div>
 
     <% if (posts.length) { %>

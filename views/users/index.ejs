@@ -20,6 +20,7 @@
         <section id="show-page" class="container-lg">
           <h1><%= p.title %></h1>
           <p><%= p.content %></p><br>
+          <p>Post is Private: <%= p.private %></p>
           <div class="d-flex justify-content-between">
               <% const postCreated = p.createdAt %>
               Posted: <%= postCreated.toLocaleDateString(); %>

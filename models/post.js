@@ -21,6 +21,10 @@ const postSchema = new Schema({
         maxLength: 1200,
         required: true
     },
+    private: {
+        type: Boolean,
+        default: false
+    },
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',

@@ -4,11 +4,12 @@ var postsCtrl = require('../controllers/posts');
 var ensureLoggedIn = require('../config/ensureLoggedIn');
 
 router.get('/', postsCtrl.index);
-router.get('/new', ensureLoggedIn, postsCtrl.new);
 router.get('/:id', postsCtrl.show);
-router.put('/:id', ensureLoggedIn, postsCtrl.edit);
+
 router.post('/', ensureLoggedIn, postsCtrl.create);
-router.delete('/:id', postsCtrl.delete);
+router.put('/:id', ensureLoggedIn, postsCtrl.edit);
+
+router.delete('/:id', ensureLoggedIn, postsCtrl.delete);
 
 
 module.exports = router;

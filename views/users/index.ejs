@@ -4,7 +4,7 @@
     <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer"> 
     <%= user.name %></div>
     <% const accountCreated = user.createdAt %>
-    <div class="text-right">Account Created: <%= accountCreated.toLocaleDateString(); %></div>
+    <div class="text-sm-end">Account Created: <%= accountCreated.toLocaleDateString(); %></div>
       <%= user.bio %>
 
   <form class="my-4" id="add-bio" action="users" method="POST" class="form-group">
@@ -14,7 +14,9 @@
   </form>
 </div>
 
-<a href="/posts">MAKE NEW POST</a>
+<div class="text-center">
+  <a href="/posts">MAKE NEW POST</a>
+</div>
     <% if (posts.length) { %>
       <% posts.forEach(function(p) { %>
         <section id="show-page" class="container-lg">

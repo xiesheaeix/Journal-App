@@ -37,36 +37,22 @@ function show(req, res) {
 }
 
 function deletePost(req, res) {
-    Post.findOneAndDelete({
-        _id:  req.params.id,
-    },
-    {
-        title: req.body.title,
-        content: req.body.content
-    }, (err, post) => {
-        if (!err) {
-            res.render('delete', {
-                title: post.title,
-                content: post.content
-            });
-        }
+    Post.findByIdAndDelete(req.params.id, (err, post) => {
+        if(err) {
+            console.log(err);
+            res.redirect("/");
+        } else res.redirect("/users");
     });
 }
- 
+
 
 function edit(req, res) {
+    console.log(req.body);
     Post.findOneAndUpdate({
         _id:  req.params.id,
     },
-    {
-        title: req.body.title,
-        content: req.body.content
-    }, (err, post) => {
-        if (!err) {
-            res.render('edit', {
-                title: post.title,
-                content: post.content
-            });
-        }
+    req.body, 
+   {new: true}, (err, post) => {
+            res.redirect('/posts');
     });
 }

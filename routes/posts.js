@@ -6,9 +6,9 @@ var ensureLoggedIn = require('../config/ensureLoggedIn');
 router.get('/', postsCtrl.index);
 router.get('/new', ensureLoggedIn, postsCtrl.new);
 router.get('/:id', postsCtrl.show);
+router.put('/:id', ensureLoggedIn, postsCtrl.edit);
 router.post('/', ensureLoggedIn, postsCtrl.create);
-router.get('/posts/:id/edit', ensureLoggedIn, postsCtrl.edit);
-router.delete('/posts/:id', postsCtrl.delete);
+router.delete('/:id', postsCtrl.delete);
 
 
 module.exports = router;

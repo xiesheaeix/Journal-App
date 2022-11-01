@@ -7,13 +7,14 @@
     <div class="text-right">Account Created: <%= accountCreated.toLocaleDateString(); %></div>
       <%= user.bio %>
 
-  <form class="mt-4" id="add-bio" action="users" method="POST" class="form-group">
+  <form class="my-4" id="add-bio" action="users" method="POST" class="form-group">
     <label>Enter Bio:</label>
     <input type="text" name="bio" class="form-control">
     <input type="submit" value="Submit" class="btn btn-dark">
   </form>
 </div>
 
+<a href="/posts">MAKE NEW POST</a>
     <% if (posts.length) { %>
       <% posts.forEach(function(p) { %>
         <section id="show-page" class="container-lg">

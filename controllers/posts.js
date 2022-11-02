@@ -47,7 +47,6 @@ function deletePost(req, res) {
 
 
 function edit(req, res) {
-    console.log(req.body);
     Post.findOneAndUpdate({
         _id:  req.params.id,
     },

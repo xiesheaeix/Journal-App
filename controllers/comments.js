@@ -26,7 +26,7 @@ function create(req, res) {
       req.body.userName = req.user.name;
       req.body.userAvatar = req.user.avatar;
       post.comments.push(req.body);
-      post.save(function(err) { console.log(err, post);
+      post.save(function(err) { 
         res.redirect(`/posts/${post._id}`);
       });
     });

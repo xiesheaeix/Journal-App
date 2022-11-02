@@ -7,10 +7,6 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    bio: {
-        type: String,
-        maxLength: 120,
-    },
     email: String,
     avatar: String,
   }, {

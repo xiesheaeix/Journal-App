@@ -23,7 +23,6 @@ function create(req, res) {
     } else {
         req.body.private = false;
     }
-    
     const post = new Post(req.body);
     post.save(function(err) {
         if (err) return res.redirect('/posts');
@@ -52,8 +51,9 @@ function edit(req, res) {
     Post.findOneAndUpdate({
         _id:  req.params.id,
     },
-    req.body, 
+    req.body,
    {new: true}, (err, post) => {
+    
             res.redirect('/posts');
     });
 }

@@ -3,7 +3,7 @@
 <div id="user-info" class="mt-4">
     <img alt="avatar" src="<%= displayUser.avatar %>" referrerpolicy="no-referrer"> 
     <%= displayUser.name %></div>
-    <% const accountCreated = user.createdAt %>
+    <% const accountCreated = displayUser.createdAt %>
     <div>Account Created: <%= accountCreated.toLocaleDateString(); %></div>
       <%= displayUser.bio %>
 </div>

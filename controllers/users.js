@@ -4,10 +4,11 @@ const Post = require ('../models/post');
 module.exports = {
    index,
    show,
+   private
 };
 
 function index(req, res) {
-  Post.find({user: req.user._id}, function(err, posts) { 
+  Post.find({user: req.user._id, private: false}, function(err, posts) { 
     res.render('users/index', { posts });
   });
 }
@@ -18,6 +19,12 @@ function show(req, res) {
       Post.find({user: req.params.id, private: false}, function(err, posts) { 
         res.render('users/show',{ displayUser, posts, user });
     });
+  });
+}
+
+function private(req, res) {
+  Post.find({user: req.user._id, private: true}, function(err, posts) { 
+    res.render('users/private', { posts });
   });
 }
 

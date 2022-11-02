@@ -6,6 +6,7 @@ body {
 a {
   color: #00B7FF;
   font-size: 20px;
+  text-decoration: none;
 }
 
 .navbar-header {
@@ -49,12 +50,12 @@ a {
 .jumbotron h1 {
   top: 10vmin;
   font-weight: bold;
-  font-size: 10vmin;
+  font-size: 8vmin;
   padding-left: 10vmin;
 }
 
 .typewriter h1 {
-  font: 70px 'Montserrat', sans-serif;
+  font: 'Montserrat', sans-serif;
   overflow: hidden;
   border-right: .15em solid #00B7FF;
   white-space: nowrap; 

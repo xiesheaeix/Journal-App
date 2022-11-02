@@ -24,9 +24,8 @@ function create(req, res) {
         req.body.private = false;
     }
     
-    console.log(req.body);
     const post = new Post(req.body);
-    post.save(function(err) { console.log(err);
+    post.save(function(err) {
         if (err) return res.redirect('/posts');
         res.redirect('/posts');
     });

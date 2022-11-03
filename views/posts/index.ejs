@@ -1,31 +1,36 @@
 <%- include('../partials/header') %>
 
-<form id="new-post" class="mt-4" action="/posts" method="POST">
-    <div class="form-group">
-        <h3>Title</h3>
-        <textarea class="form-control" type="text" name="title" rows="3"></textarea><br>
-        <h3>Write Your Heart Out</h3>
-        <textarea class="form-control" type="text" name="content" rows="6"></textarea><br>
-        <div class="d-flex">
-            <input class="btn btn-dark mr-auto p-2" type="submit" value="ADD NEW POST">
-            <h4 class="p-2"> Private Post? </h4>
-            <input class="p-2" type="checkbox" name="private">
+    <form id="new-post" class="mt-4" action="/posts" method="POST">
+        <div class="form-group">
+            <h3>Title</h3>
+            <textarea class="form-control" type="text" name="title" rows="3"></textarea><br>
+            <h3>Write Your Heart Out</h3>
+            <textarea class="form-control" type="text" name="content" rows="6"></textarea><br>
+            <div class="d-flex">
+                <input class="btn btn-dark mr-auto p-2" type="submit" value="ADD NEW POST">
+                <h4 class="p-2"> Private Post? </h4>
+                <input class="p-2" type="checkbox" name="private">
+            </div>
         </div>
-    </div>
-</form>
+    </form>
 
 
-<% posts.forEach(function(p) { %>
-    <div class="container-lg">
-        <h3><%= p.title %></h3><br>
-        <p><%= p.content %></p>
-        <div class="d-flex justify-content-between">
-            <% const dateCreated = p.createdAt %>
-            <div>Posted: <%= dateCreated.toLocaleDateString(); %></div><br>
-            <a href="/posts/<%=p._id %>">Details</a>
-        </div>  
-    </div>
-<% }); %>
+    <% posts.forEach(function(p) { %>
+        <div class="container-lg">
+            <h3>
+                <%= p.title %>
+            </h3><br>
+            <p>
+                <%= p.content %>
+            </p>
+            <div class="d-flex justify-content-between">
+                <% const dateCreated=p.createdAt %>
+                    <div>Posted: <%= dateCreated.toLocaleDateString(); %>
+                    </div><br>
+                    <a href="/posts/<%=p._id %>">Details</a>
+            </div>
+        </div>
+        <% }); %>
 
 
-<%- include('../partials/footer') %>
+            <%- include('../partials/footer') %>

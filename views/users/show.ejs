@@ -1,30 +1,35 @@
 <%- include('../partials/header') %>
 
-<div id="user-info" class="mt-4">
-    <img alt="avatar" src="<%= displayUser.avatar %>" referrerpolicy="no-referrer"> 
-    <%= displayUser.name %></div>
-    <% const accountCreated = displayUser.createdAt %>
-    <div>Account Created: <%= accountCreated.toLocaleDateString(); %></div>
-      <%= displayUser.bio %>
-</div>
+  <div id="user-info" class="mt-4">
+    <img alt="avatar" src="<%= displayUser.avatar %>" referrerpolicy="no-referrer">
+    <%= displayUser.name %>
+  </div>
+  <% const accountCreated=displayUser.createdAt %>
+    <div class="text-sm-end">Account Created:<br>
+      <%= accountCreated.toLocaleDateString(); %>
+    </div>
+    <%= displayUser.bio %>
+      </div>
 
-    <% if (posts.length) { %>
-      <% posts.forEach(function(p) { %>
-        <section id="show-page" class="container-lg">
-          <h1><%= p.title %></h1>
-          <p><%= p.content %></p><br>
-          <div class="d-flex justify-content-between">
-              <% const postCreated = p.createdAt %>
-              Posted: <%= postCreated.toLocaleDateString(); %>
-            <a href="/posts/<%=p._id %>">Details</a>
-          </div>
-        </section>
-      <% }); %>
-   <% } else { %>
-    <h4>No Posts Yet 😢</h4>
-  <% } %>
-    
+      <% if (posts.length) { %>
+        <% posts.forEach(function(p) { %>
+          <section id="show-page" class="container-lg">
+            <h1>
+              <%= p.title %>
+            </h1>
+            <p>
+              <%= p.content %>
+            </p><br>
+            <div class="d-flex justify-content-between">
+              <% const postCreated=p.createdAt %>
+                Posted: <%= postCreated.toLocaleDateString(); %>
+                  <a href="/posts/<%=p._id %>">Details</a>
+            </div>
+          </section>
+          <% }); %>
+            <% } else { %>
+              <h4>No Posts Yet 😢</h4>
+              <% } %>
 
-<%- include('../partials/footer') %>
 
-  
+                <%- include('../partials/footer') %>

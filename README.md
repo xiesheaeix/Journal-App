@@ -3,7 +3,7 @@
 
 
 
-# Concentration 🤓⏱
+# Journaling App 📝❤️
 
 
 
@@ -15,33 +15,20 @@
 
 ### Getting Started
 
-**❗️WARNING: LOUD AUDIO AND JUMP SCARES❗️**
 
+#### Start your journal entries 🔗
 
-
-
-
-#### Play the game here 🔗
-
-[🔥https://xiesheaeix.github.io/Project-1/🔥](https://xiesheaeix.github.io/Project-1/)
+[✏️https://journal-app-1997.herokuapp.com✏️](https://journal-app-1997.herokuapp.com/posts)
 
   
 
 ### Description 📝
 
-  Concentration is a memory game where all tiles start in a face down position. When 
-
-  a user clicks a tile the front face of the tile is shown. Every tile in the game
-
-  has a matching pair. To win the game, you must match all of the tiles but you only
-
-  10 chances at guessing. My version of this game has a scary twist, there is loud 
-
-  audio and a jump scare involved.
-
+  This web app is all about expressing your feelings and sharing with others! Viewing others posts is as easy as navigating to the **post** section in the nav bar. Once there you can look around but will need to sign up with Google Oauth to leave comments or navigate to a persons specific profile. If you choose to sign up you will be able to start creating your own posts, leaving comments on other posts and even create secret posts. 🤫 Your free to express whatever is on your mind and read others expressions!
+ 
   
 
-![img](https://i.imgur.com/LRJo2Po.jpg)
+![img](http://i.imgur.com/nWSBvEd.jpg)
 
 ![img](https://i.imgur.com/iCo9UZ5.jpg)
 

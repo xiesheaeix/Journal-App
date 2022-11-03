@@ -24,7 +24,7 @@
       <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
         <div class="form-group">
           <label>Title</label>
-          <input type="text" name="title" class="form-control">
+          <textarea name="title" class="form-control" autocomplete="off" rows="1"><%= post.title %></textarea>
           <label>Post</label>
           <textarea name="content" class="form-control" autocomplete="off" rows="3"><%= post.content %></textarea><br>
         </div>

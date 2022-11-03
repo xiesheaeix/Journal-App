@@ -13,9 +13,6 @@ a {
   margin: 20px;
 }
 
-#logout, #login {
-  text-align: end;
-}
 
 .container-lg {
   border: 2px solid black;

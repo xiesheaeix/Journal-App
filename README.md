@@ -15,6 +15,8 @@
 
 ### Getting Started
 
+(User data isn't encrypted on the database, please don't add any sensitive data to private posts 🤭) 
+
 
 #### Start your journal entries 🔗
 

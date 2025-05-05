@@ -15,14 +15,12 @@ router.get('/auth/google', passport.authenticate(
   }
 ));
 
-router.get('/oauth2callback', passport.authenticate(
-  'google',
-  {
-    successRedirect: '/',
-    // Change to what's best for YOUR app
-    failureRedirect: '/'
-  }
-));
+router.get('/oauth2callback', passport.authenticate('google', {
+  successRedirect: '/',
+  failureRedirect: '/'
+}), (req, res) => {
+  console.log("User after login: ", req.user);  // Debugging here
+});
 
 router.get('/logout', function(req, res) {
   req.logout(function() {

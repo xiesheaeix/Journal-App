@@ -16,11 +16,13 @@ router.get('/auth/google', passport.authenticate(
 ));
 
 router.get('/oauth2callback', passport.authenticate('google', {
-  successRedirect: '/',
+  successRedirect: function(req, res) {
+    // Redirecting to the user's profile page after successful login
+    res.redirect('/users/' + req.user._id); // Use the logged-in user's ID
+  },
   failureRedirect: '/'
-}), (req, res) => {
-  console.log("User after login: ", req.user);  // Debugging here
-});
+}));
+
 
 router.get('/logout', function(req, res) {
   req.logout(function() {

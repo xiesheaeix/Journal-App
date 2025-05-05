@@ -20,7 +20,7 @@
 
 #### Start your journal entries 🔗
 
-[✏️https://journal-app-1997.herokuapp.com✏️](https://journal-app-pk39.onrender.com/)
+[✏️https://journal-app-pk39.onrender.com/✏️](https://journal-app-pk39.onrender.com/)
   
 [Wireframe & Project Planning](https://trello.com/b/Ct6xoEnx/project-2P)
 

@@ -37,6 +37,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+
+//for testing 
+console.log("Session Secret:", process.env.SECRET); // For debugging
+
+
+
 app.use(function (req, res, next) {
   res.locals.user = req.user;
   next();
